@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block title %}Dashboard | ResumeAI{% endblock %}
+{% block content %}<div class="container dashboard">
+<div class="dash-head"><div><div class="badge-soft">AI CAREER DASHBOARD</div><h1>Welcome, {{name}} 👋</h1><p class="muted">Upload a resume to get your personalized prediction.</p></div></div>
+<div class="upload-card">
+ <form action="/predict" method="post" enctype="multipart/form-data">
+  <div class="upload-icon">↑</div><h3>Upload your resume</h3><p class="muted">PDF, DOCX or TXT • Best results with a complete resume</p>
+  <label class="file-label"><input id="resume" name="resume" type="file" accept=".pdf,.docx,.txt" required>Choose Resume</label>
+  <span id="fileName" class="file-name">No file selected</span>
+  <button class="btn btn-primary btn-lg mt-4">Analyze with AI ✦</button>
+ </form>
+</div>
+<h3 class="mt-5 mb-3">Prediction History</h3>
+<div class="table-card">
+<table class="table table-dark table-borderless align-middle mb-0"><thead><tr><th>Resume</th><th>Predicted Role</th><th>Score</th><th>Date</th></tr></thead><tbody>
+{% for r in rows %}<tr><td>{{r.filename}}</td><td><span class="role-pill">{{r.role}}</span></td><td><b>{{r.score}}%</b></td><td class="muted">{{r.created_at}}</td></tr>
+{% else %}<tr><td colspan="4" class="text-center muted py-5">No predictions yet. Upload your first resume above.</td></tr>{% endfor %}
+</tbody></table></div></div>{% endblock %}

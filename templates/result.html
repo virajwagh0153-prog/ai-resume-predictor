@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}Analysis Result | ResumeAI{% endblock %}
+{% block content %}<div class="container result">
+<div class="text-center"><div class="badge-soft">ANALYSIS COMPLETE</div><h1>Your Career Match</h1><p class="muted">Here is what ResumeAI found in your resume.</p></div>
+<div class="result-grid">
+<div class="result-card score-card"><div class="score-ring" style="--score:{{score*3.6}}deg"><div>{{score}}<small>%</small></div></div><h4>Resume Score</h4><p class="muted">Overall resume strength</p></div>
+<div class="result-card"><span class="muted">PREDICTED ROLE</span><h2 class="role-title">{{role}}</h2><p>Your current skill profile shows the strongest alignment with this career path.</p><a href="/dashboard" class="btn btn-outline-light">Back to Dashboard</a></div>
+</div>
+<div class="result-grid lower">
+<div class="result-card"><h4>✓ Detected Skills</h4><div class="chips">{% for s in skills %}<span>{{s}}</span>{% else %}<span>No recognized skills</span>{% endfor %}</div></div>
+<div class="result-card"><h4>⚡ Skills to Improve</h4><div class="chips missing">{% for s in missing %}<span>{{s}}</span>{% else %}<span>Great coverage!</span>{% endfor %}</div></div>
+</div>
+</div>{% endblock %}

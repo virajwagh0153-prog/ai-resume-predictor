@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% block title %}AI Resume Predictor{% endblock %}
+{% block content %}
+<section class="hero container">
+ <div class="hero-copy">
+  <div class="badge-soft">✦ AI-POWERED CAREER INTELLIGENCE</div>
+  <h1>Turn your resume into your <span>career roadmap.</span></h1>
+  <p>Upload your resume and discover the most suitable job role, resume score, matched skills and the skills you should build next.</p>
+  <div class="d-flex gap-3 flex-wrap"><a class="btn btn-primary btn-lg glow" href="/register">Analyze My Resume →</a><a class="btn btn-outline-light btn-lg" href="/login">Sign In</a></div>
+  <div class="mini-stats"><div><b>AI</b><small>Role Prediction</small></div><div><b>6+</b><small>Career Tracks</small></div><div><b>24/7</b><small>Instant Analysis</small></div></div>
+ </div>
+ <div class="hero-card floating">
+  <div class="scan-line"></div><div class="circle-score">87<span>%</span></div>
+  <h5>Resume Match Score</h5><p>Strong fit for</p><strong>Python Developer</strong>
+  <div class="skill-bars"><i style="width:92%"></i><i style="width:78%"></i><i style="width:66%"></i></div>
+ </div>
+</section>
+<section class="container feature-grid">
+ <div class="feature-card"><div class="icon">⌁</div><h4>Smart Prediction</h4><p>Analyze resume content and map skills to suitable career roles.</p></div>
+ <div class="feature-card"><div class="icon">◈</div><h4>Actionable Insights</h4><p>See missing skills and practical improvement opportunities.</p></div>
+ <div class="feature-card"><div class="icon">↗</div><h4>Career Dashboard</h4><p>Keep your previous predictions organized in one place.</p></div>
+</section>
+{% endblock %}
